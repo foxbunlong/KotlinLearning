@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.longthay.demokotlin.models.JavaModel
 import com.example.longthay.demokotlin.models.KotlinModel
 
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -14,7 +16,10 @@ import kotlinx.android.synthetic.main.fragment_main.*
  */
 class MainActivityFragment : Fragment() {
 
-    val kotlinModel : KotlinModel = KotlinModel("Long Thay", 30)
+    val kotlinModel: KotlinModel = KotlinModel("Long Thay", 30)
+
+    // Use of Java Model in Kotlin
+    val javaModel : JavaModel = JavaModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -23,22 +28,29 @@ class MainActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
 
+        // Init Java model
+        javaModel.name = "This is Java model"
+
         this.etInput.setText(kotlinModel.age.toString())
 
         btnAdd.setOnClickListener({
             doAdd(etInput.text.toString().toInt(), 10)
+            Toast.makeText(context, javaModel.name, Toast.LENGTH_SHORT).show()
         })
 
         btnMinus.setOnClickListener({
             doMinus(etInput.text.toString().toInt(), 10)
+            Toast.makeText(context, javaModel.name, Toast.LENGTH_SHORT).show()
         })
 
         btnMultiply.setOnClickListener({
             doMultiply(etInput.text.toString().toInt(), 2)
+            Toast.makeText(context, javaModel.name, Toast.LENGTH_SHORT).show()
         })
 
         btnDivide.setOnClickListener({
             doDivide(etInput.text.toString().toInt(), 2)
+            Toast.makeText(context, javaModel.name, Toast.LENGTH_SHORT).show()
         })
     }
 

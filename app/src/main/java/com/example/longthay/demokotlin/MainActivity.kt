@@ -7,8 +7,17 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import com.example.longthay.demokotlin.interfaces.KotlinListener
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), KotlinListener {
+
+    override fun onDataSuccess() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onDataFailed() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
