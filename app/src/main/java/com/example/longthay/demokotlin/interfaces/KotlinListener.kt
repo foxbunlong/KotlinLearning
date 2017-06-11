@@ -5,7 +5,7 @@ package com.example.longthay.demokotlin.interfaces
  */
 interface KotlinListener {
 
-    fun onDataSuccess()
-    fun onDataFailed()
+    fun onDataSuccess(passedValue : Int)
+    fun onDataFailed(passedValue : Int)
 
 }

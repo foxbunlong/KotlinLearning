@@ -7,16 +7,17 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.example.longthay.demokotlin.interfaces.KotlinListener
 
 class MainActivity : AppCompatActivity(), KotlinListener {
 
-    override fun onDataSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onDataSuccess(passedValue : Int) {
+        Toast.makeText(this, "Just set age: " + passedValue, Toast.LENGTH_SHORT).show()
     }
 
-    override fun onDataFailed() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onDataFailed(passedValue : Int) {
+        Toast.makeText(this, "Just fail set age: " + passedValue, Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
